@@ -44,13 +44,64 @@
 
 # if elif else
 
-x=int(input("Enter Number :"))
-if x>0:
-    print(f"The Number {x} is positive number.")
-elif x<0:
-    print(f"The Number {x} is negative number.")
-else:
-    print(f"The Number {x} is zero.")
+# x=int(input("Enter Number :"))
+# if x>0:
+#     print(f"The Number {x} is positive number.")
+# elif x<0:
+#     print(f"The Number {x} is negative number.")
+# else:
+#     print(f"The Number {x} is zero.")
+
+# import copy  
+
+# a=[[1,2,3,4],[10,20,30,40]]
+# print(a)
+
+# # Deep copy 
+
+# b=copy.deepcopy(a)   
+# print(b)
+
+# b[1][0]=5
+# print(b)
+# print(a)
+
+# import copy  
+
+# a = [[1, 2, 3], [10, 20, 30]]
+# print(a)
+
+# #Shallow Copy
+# b = copy.copy(a)
+# print(b)
+
+# b[0][0] = 99
+
+# print(b)
+# print(a)
 
 
+import copy
 
+
+class Car:
+    def __init__(self, name, colors):
+        self.name = name
+        self.colors = colors
+
+
+# Create a Honda car object
+honda_colors = ["Red", "Blue"]
+honda = Car("Honda", honda_colors)
+
+# Deepcopy of Honda
+deepcopy_honda = copy.deepcopy(honda)
+deepcopy_honda.colors.append("Green")
+print("Deepcopy:", deepcopy_honda.colors)
+print("Original:", honda.colors)
+
+# Shallow Copy of Honda
+copy_honda = copy.copy(honda)
+copy_honda.colors.append("Green")
+print("Shallow Copy:", copy_honda.colors)
+print("Original:", honda.colors)
